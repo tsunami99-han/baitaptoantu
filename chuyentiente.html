@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr>
+        <td><input type="text" id="giatrivao"></td>
+        <td><select id="select1">
+            <option value="a">VND</option>
+            <option value="b">USD</option>
+            <option value="c">EURO</option>
+        </select></td>
+        <td><select id="select2">
+            <option value="a">VND</option>
+            <option value="b">USD</option>
+            <option value="c">EURO</option>
+        </select></td>
+        <td>
+            <button onclick="lamGiDo()">Convert</button>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">Result:</td>
+        <td id="ketqua"
+        0.></td>
+    </tr>
+    <script>
+        function lamGiDo() {
+            let giatrivao = document.getElementById('giatrivao').value;
+            let select1 = document.getElementById('select1').value;
+            let select2 = document.getElementById('select2').value;
+            alert();
+
+            if (select1 == select2) {
+                document.getElementById('ketqua').innerHTML=(giatrivao + document.getElementById('select2').options[document.getElementById("select2").selectedIndex].text)
+            }; if (select1 == 'a' && select2 == 'b') {
+                document.getElementById('ketqua').innerHTML=(giatrivao/23000 + document.getElementById('select2').options[document.getElementById("select2").selectedIndex].text)
+            }
+            if (select1 == 'a' && select2 == 'c') {
+                document.getElementById('ketqua').innerHTML=(giatrivao/34500 + document.getElementById('select2').options[document.getElementById("select2").selectedIndex].text)
+            }
+            if (select1 == 'b' && select2 == 'a') {
+                document.getElementById('ketqua').innerHTML=(giatrivao*23000 + document.getElementById('select2').options[document.getElementById("select2").selectedIndex].text)
+            }
+            if (select1 == 'b' && select2 == 'c') {
+                document.getElementById('ketqua').innerHTML=(giatrivao/1.5 + document.getElementById('select2').options[document.getElementById("select2").selectedIndex].text)
+            }
+            if (select1 == 'c' && select2 == 'a') {
+                document.getElementById('ketqua').innerHTML=(giatrivao*34500 + document.getElementById('select2').options[document.getElementById("select2").selectedIndex].text)
+            }
+            if (select1 == 'c' && select2 == 'b') {
+                document.getElementById('ketqua').innerHTML=(giatrivao*1.5 + document.getElementById('select2').options[document.getElementById("select2").selectedIndex].text)
+            }
+
+        }
+    </script>
+</table>
+
+
+</body>
+</html>
